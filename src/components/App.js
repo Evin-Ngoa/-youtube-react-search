@@ -2,9 +2,10 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
+import VideoDetail from './VideoDetail';
 
 class App extends React.Component{
-    state = { videos: [], selectedVideo: {} }
+    state = { videos: [], selectedVideo: null }
 
     handleSearchTermSubmit = async searchTerm => {
  
@@ -26,6 +27,7 @@ class App extends React.Component{
         <div className="ui container"> 
             <SearchBar handleSearchTermSubmit = {this.handleSearchTermSubmit} />
             {this.state.videos.length} videos found
+            <VideoDetail video={this.state.selectedVideo} />
             <VideoList 
             videos={this.state.videos} 
             handleVideoSelect={this.handleVideoSelect}
