@@ -4,7 +4,7 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 
 class App extends React.Component{
-    state = { videos: [], selectedVideo: null }
+    state = { videos: [], selectedVideo: {} }
 
     handleSearchTermSubmit = async searchTerm => {
  
@@ -18,7 +18,7 @@ class App extends React.Component{
     }
 
     handleVideoSelect = (video) => {
-        console.log("From App: ", video)
+        this.setState({selectedVideo: video});
     }
 
     render(){
