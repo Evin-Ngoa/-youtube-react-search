@@ -14,12 +14,11 @@ class App extends React.Component{
             }
         });
 
-        // update video state
         this.setState({videos: response.data.items})
     }
 
     handleVideoSelect = (video) => {
-        // console.log("From App: ", video)
+        console.log("From App: ", video)
     }
 
     render(){
