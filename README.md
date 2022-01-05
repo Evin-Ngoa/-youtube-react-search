@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## YOUTUBE API KEY
+> Navigate to https://console.cloud.google.com/apis/api/youtube.googleapis.com/credentials?project=
+
+> Create a project
+> Search for Youtube Data API V3
+> Create Credential
+> copy the credential key and paste in in .env-example (REACT_APP_YOUTUBE_API_KEY)
+> Rename .env-example to .env
 ## Available Scripts
 
 In the project directory, you can run:
