@@ -4,7 +4,7 @@ import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 
 class App extends React.Component{
-    state = { videos: [] }
+    state = { videos: [], selectedVideo: null }
 
     handleSearchTermSubmit = async searchTerm => {
  
@@ -18,12 +18,19 @@ class App extends React.Component{
         this.setState({videos: response.data.items})
     }
 
+    handleVideoSelect = (video) => {
+        // console.log("From App: ", video)
+    }
+
     render(){
         return (
         <div className="ui container"> 
             <SearchBar handleSearchTermSubmit = {this.handleSearchTermSubmit} />
             {this.state.videos.length} videos found
-            <VideoList videos={this.state.videos} />
+            <VideoList 
+            videos={this.state.videos} 
+            handleVideoSelect={this.handleVideoSelect}
+            />
         </div>
         )
     }
