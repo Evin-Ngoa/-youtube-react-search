@@ -3,7 +3,8 @@ import VideoItem from "./VideoItem";
 
 const VideoList = ({ videos, handleVideoSelect }) => {
     const videosLst = videos.map( video => {
-        return <VideoItem key={video.id.videoId} 
+        return <VideoItem 
+        key={video.id.videoId} 
         video={video} 
         handleVideoSelect={handleVideoSelect}
         />;
