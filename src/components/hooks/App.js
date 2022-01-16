@@ -24,10 +24,6 @@ const App = ({ handleSearchTermSubmit }) => {
         setSelectedVideo(response.data.items[0]);
     }
 
-    const handleVideoSelect = (video) => {
-        setSelectedVideo(video);
-    }
-
     return (
         <div className="ui container"> 
             <SearchBar handleSearchTermSubmit = {handleSearchTermSubmit} />
@@ -40,7 +36,7 @@ const App = ({ handleSearchTermSubmit }) => {
                     <div className='five wide column'>
                         <VideoList
                         videos={videos} 
-                        handleVideoSelect={handleVideoSelect}
+                        handleVideoSelect={setSelectedVideo}
                         />
                      </div>
                 </div>
