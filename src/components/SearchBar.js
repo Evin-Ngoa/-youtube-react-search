@@ -25,7 +25,7 @@ class SearchBar extends React.Component{
                     placeholder="start typing then press enter"
                     onChange={this.handleInputChange}
                     />
-                    <i class="search icon"></i>
+                    <i className="search icon"></i>
                 </div>
             </form>
         </div>

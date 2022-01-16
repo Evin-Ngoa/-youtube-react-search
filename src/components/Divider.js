@@ -6,8 +6,8 @@ const Divider = ({ results }) => {
     }
 
     return (
-        <h4 class="ui horizontal divider header">
-            <i class="list icon"></i>
+        <h4 className="ui horizontal divider header">
+            <i className="list icon"></i>
             {results.length} videos found
         </h4>
     );

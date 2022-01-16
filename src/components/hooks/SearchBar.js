@@ -18,7 +18,7 @@ const SearchBar = ({ handleSearchTermSubmit }) => {
                     placeholder="start typing then press enter"
                     onChange={(event) => setSearchTerm(event.target.value)}
                     />
-                    <i class="search icon"></i>
+                    <i className="search icon"></i>
                 </div>
             </form>
         </div>
