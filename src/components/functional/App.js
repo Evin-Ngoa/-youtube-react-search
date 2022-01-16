@@ -10,7 +10,7 @@ const App = ({ handleSearchTermSubmit }) => {
 
     //composerDidMount Run only once
     useEffect( () => {
-        handleSearchTermSubmit();
+        handleSearchTermSubmit('buildings');
     }, []);
 
     const handleSearchTermSubmit = async searchTerm => {
