@@ -9,7 +9,7 @@ const useVideos = ({ defaultSerchTerm }) => {
     //composerDidMount Run only once
     useEffect( () => {
         handleSearch(defaultSerchTerm);
-    }, []);
+    }, [defaultSerchTerm]);
 
     // output
     const handleSearch = async searchTerm => {
@@ -20,7 +20,6 @@ const useVideos = ({ defaultSerchTerm }) => {
         });
 
         setVideos(response.data.items);
-        // setSelectedVideo(response.data.items[0]);
     }
 
     return [

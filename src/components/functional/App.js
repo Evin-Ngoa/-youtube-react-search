@@ -3,30 +3,20 @@ import Divider from "../Divider";
 import VideoDetail from "../VideoDetail";
 import VideoList from "../VideoList";
 import SearchBar from "./SearchBar";
+import useVideos from "./hooks/api/useVideos";
 
 const App = ({ handleSearchTermSubmit }) => {
-    const [videos, setVideos] = useState([]);
+
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const [videos, searchVideo] = useVideos('buildings');
 
-    //composerDidMount Run only once
-    useEffect( () => {
-        handleSearchTermSubmit('buildings');
-    }, []);
-
-    const handleSearchTermSubmit = async searchTerm => {
-        const response = await youtube.get('/search',{
-            params:{
-                q: searchTerm
-            }
-        });
-
-        setVideos(response.data.items);
-        setSelectedVideo(response.data.items[0]);
-    }
+    useEffect(() => {
+        setSelectedVideo(videos[0]);
+    }, [videos]);
 
     return (
         <div className="ui container"> 
-            <SearchBar handleSearchTermSubmit = {handleSearchTermSubmit} />
+            <SearchBar handleSearchTermSubmit = {searchVideo} />
             <Divider results={videos} />
             <div className='ui grid'>
                 <div className='ui row'>
