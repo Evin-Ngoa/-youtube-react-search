@@ -9,6 +9,10 @@ import Divider from './Divider';
 class App extends React.Component{
     state = { videos: [], selectedVideo: null }
 
+    componentDidMount(){
+        this.handleSearchTermSubmit('buildings');
+    }
+
     handleSearchTermSubmit = async searchTerm => {
  
         const response = await youtube.get('/search',{
